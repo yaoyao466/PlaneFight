@@ -46,6 +46,8 @@ export class Player extends Component {
     getBombAudio:AudioClip = null;
     @property(AudioClip)
     getDoubleAudio:AudioClip = null;
+    @property(AudioClip)
+    playerContact:AudioClip = null; // 主角被撞
 
     @property(Animation)
     anim:Animation = null; // 主角飞机动画
@@ -55,7 +57,7 @@ export class Player extends Component {
     animDown:string = "";
 
     @property
-    twoShootTime:number = 5; // 双发模式持续时间
+    twoShootTime:number = 10; // 双发模式持续时间
     twoShootTimer:number = 0; // 双发模式定时器
 
     @property
@@ -130,6 +132,7 @@ export class Player extends Component {
     onContactToEnemy() {
         if (this.isInvincible) return;
 
+        AudioMgr.inst.playOneShot(this.playerContact, 10)
         this.isInvincible = true;
         this.invincibleTimer = 0;
         this.changeLifCount(-1);
@@ -148,7 +151,7 @@ export class Player extends Component {
 
             this.scheduleOnce(()=>{
                 GameManager.getInstance().gameOver();
-            }, 0.5);
+            }, 0.4);
         }
     }
 
@@ -206,7 +209,7 @@ export class Player extends Component {
         // 更新间隔超过了射击频率，就发射子弹
         if (this.shootTimer >= this.shootRate) {
             // 播放子弹音效
-            AudioMgr.inst.playOneShot(this.bulletAudio, 0.3);
+            AudioMgr.inst.playOneShot(this.bulletAudio, 0.6);
             this.shootTimer = 0;
             // 创建新子弹
             const bullet1 = instantiate(this.bullet1Prefab);
@@ -227,7 +230,7 @@ export class Player extends Component {
         this.shootTimer += dt;
         // 更新间隔超过了射击频率，就发射子弹
         if (this.shootTimer >= this.shootRate) {
-            AudioMgr.inst.playOneShot(this.bulletAudio, 0.5);
+            AudioMgr.inst.playOneShot(this.bulletAudio, 1);
             this.shootTimer = 0;
             // 创建新子弹
             const bullet1 = instantiate(this.bullet2Prefab);

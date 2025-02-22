@@ -8,8 +8,8 @@ const { ccclass, property } = _decorator;
 @ccclass('Enemy')
 export class Enemy extends Component {
 
-    @property
-    speed:number = 300;
+    //@property
+    speed:number = 0;
 
     @property(Animation)
     anim:Animation = null;
@@ -21,7 +21,7 @@ export class Enemy extends Component {
     @property
     hp:number = 1;
     @property
-    score:number = 100;
+    score:number = 10;
     @property(AudioClip)
     enemyDownAudio:AudioClip = null;
     
@@ -45,6 +45,10 @@ export class Enemy extends Component {
         if (this.node.position.y < -580) {
             this.node.destroy();
         }
+    }
+
+    changeSpeed(speed: number) {
+        this.speed = speed;
     }
 
     onBeginContact (selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null) {

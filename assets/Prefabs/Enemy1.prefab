@@ -22,7 +22,7 @@
         "__id__": 2
       }
     ],
-    "_active": true,
+    "_active": false,
     "_components": [
       {
         "__id__": 10
@@ -253,14 +253,13 @@
     "__prefab": {
       "__id__": 11
     },
-    "speed": 200,
     "anim": {
       "__id__": 7
     },
     "animHit": "Enemy1_Hit",
     "animDown": "Enemy1_Down",
-    "hp": 2.8,
-    "score": 200,
+    "hp": 3,
+    "score": 30,
     "enemyDownAudio": {
       "__uuid__": "da0408fe-4565-445c-9a6f-d67e9abeaa0c",
       "__expectedType__": "cc.AudioClip"

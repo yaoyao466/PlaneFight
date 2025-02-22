@@ -41,7 +41,7 @@ export class GameManager extends Component {
     }
 
     protected start(): void {
-        AudioMgr.inst.play(this.gameMusic, 0.2);
+        AudioMgr.inst.play(this.gameMusic, 0.5);
     }
 
     public AddBomb() {
@@ -64,7 +64,7 @@ export class GameManager extends Component {
     }
 
     onPauseButtonClick() {
-        AudioMgr.inst.playOneShot(this.buttonAudio, 0.5);
+        AudioMgr.inst.playOneShot(this.buttonAudio, 1);
         AudioMgr.inst.pause();
         EnemyManager.getInstance().pauseEnemyAudio();
         director.pause();
@@ -76,7 +76,7 @@ export class GameManager extends Component {
     }
 
     onResumeButtonClick() {
-        AudioMgr.inst.playOneShot(this.buttonAudio, 0.5);
+        AudioMgr.inst.playOneShot(this.buttonAudio, 1);
         AudioMgr.inst.resume();
         EnemyManager.getInstance().resumeEnemyAudio();
         director.resume();
@@ -108,13 +108,13 @@ export class GameManager extends Component {
     }
 
     onRestartButtonClick() {
-        AudioMgr.inst.playOneShot(this.buttonAudio, 0.5);
+        AudioMgr.inst.playOneShot(this.buttonAudio, 1);
         this.onResumeButtonClick();
         director.loadScene(director.getScene().name);
     }
 
     onQuitButtonClick() {
-        AudioMgr.inst.playOneShot(this.buttonAudio, 0.5);
+        AudioMgr.inst.playOneShot(this.buttonAudio, 1);
         EnemyManager.getInstance().pauseEnemyAudio();
         AudioMgr.inst.stop();
         this.onResumeButtonClick();

@@ -249,14 +249,14 @@
     "__prefab": {
       "__id__": 11
     },
-    "speed": 300,
+    "speed": 200,
     "anim": {
       "__id__": 7
     },
     "animHit": "",
     "animDown": "Enemy0_Down",
     "hp": 1,
-    "score": 100,
+    "score": 10,
     "enemyDownAudio": {
       "__uuid__": "037d5531-5fa2-4617-a53a-6701be4ac59b",
       "__expectedType__": "cc.AudioClip"
