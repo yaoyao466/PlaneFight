@@ -177,11 +177,11 @@ export class Player extends Component {
         if (targetPostion.x > 230) {
             targetPostion.x = 230;
         }
-        if (targetPostion.y < -380) {
-            targetPostion.y = -380;
+        if (targetPostion.y < -470) {
+            targetPostion.y = -470;
         }
-        if (targetPostion.y > 380) {
-            targetPostion.y = 380;
+        if (targetPostion.y > 470) {
+            targetPostion.y = 470;
         }
         this.node.setPosition(targetPostion);
     }

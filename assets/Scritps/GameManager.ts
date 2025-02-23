@@ -41,7 +41,7 @@ export class GameManager extends Component {
     }
 
     protected start(): void {
-        AudioMgr.inst.play(this.gameMusic, 0.5);
+        AudioMgr.inst.play(this.gameMusic, 0.3);
     }
 
     public AddBomb() {

@@ -42,7 +42,7 @@ export class Enemy extends Component {
             this.node.setPosition(p.x, p.y - this.speed * deltaTime, p.z);
         }
 
-        if (this.node.position.y < -580) {
+        if (this.node.position.y < -670) {
             this.node.destroy();
         }
     }

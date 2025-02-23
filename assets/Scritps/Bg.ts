@@ -9,8 +9,9 @@ export class Bg extends Component {
     @property(Node)
     bg02:Node = null
     @property
-    speed:number = 100
+    speed:number = 100;
 
+    hight:number = 1080; // 屏幕高度
     start() {
 
     }
@@ -26,12 +27,12 @@ export class Bg extends Component {
         let p1 = this.bg01.position;
         let p2 = this.bg02.position;
         //当背景1位置超出屏幕范围时，把它的位置放到上面
-        if (this.bg01.position.y < -852) {
-            this.bg01.setPosition(p1.x, p2.y + 852, p1.z)
+        if (this.bg01.position.y < (-1 * this.hight)) {
+            this.bg01.setPosition(p1.x, p2.y + this.hight, p1.z)
         }
         //当背景2位置超出屏幕范围时，把它的位置放到上面
-        if (this.bg02.position.y < -852) {
-            this.bg02.setPosition(p2.x, p1.y + 852, p2.z)
+        if (this.bg02.position.y < (-1 * this.hight)) {
+            this.bg02.setPosition(p2.x, p1.y + this.hight, p2.z)
         }
     }
 }

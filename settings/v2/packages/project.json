@@ -4,7 +4,8 @@
   "general": {
     "designResolution": {
       "width": 480,
-      "height": 850
+      "height": 1080,
+      "fitHeight": true
     }
   },
   "physics": {
@@ -39,5 +40,15 @@
       "name": "GAME",
       "value": 1
     }
-  ]
+  ],
+  "sorting-layer": {
+    "layers": [
+      {
+        "id": 0,
+        "name": "default",
+        "value": 0
+      }
+    ],
+    "increaseId": 2
+  }
 }

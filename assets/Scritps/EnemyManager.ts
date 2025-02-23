@@ -118,13 +118,13 @@ export class EnemyManager extends Component {
             this.hardNumber += 1;
             console.log("change hard 3")
         } else if (this.gameTimer > 90 && this.hardNumber == 3) {
-            this.enemy0Speed = 450;
-            this.enemy1Speed = 350;
+            this.enemy0Speed = 500;
+            this.enemy1Speed = 400;
             this.enemy2Speed = 200;
             this.enemy0SpawnRate = 0.2;
             this.enemy1SpawnRate = 1.2;
             this.enemy2SpawnRate = 8;
-            this.rewardSpawnRate = 6;
+            this.rewardSpawnRate = 5;
             this.changeSpawnSchedule();
             this.hardNumber += 1;
             console.log("change hard 4")
@@ -132,17 +132,17 @@ export class EnemyManager extends Component {
     }
 
     enemy0Spawn() {
-        const enemyNode = this.objectSpawn(this.enemy0Prefab, -215, 215, 450, this.enemy0Speed);
+        const enemyNode = this.objectSpawn(this.enemy0Prefab, -215, 215, 570, this.enemy0Speed);
         this.enemyArray.push(enemyNode);
     }
 
     enemy1Spawn() {
-        const enemyNode = this.objectSpawn(this.enemy1Prefab, -200, 200, 475, this.enemy1Speed);
+        const enemyNode = this.objectSpawn(this.enemy1Prefab, -200, 200, 595, this.enemy1Speed);
         this.enemyArray.push(enemyNode);
     }
 
     enemy2Spawn() {
-        const enemyNode = this.objectSpawn(this.enemy2Prefab, -155, 155, 560, this.enemy2Speed);
+        const enemyNode = this.objectSpawn(this.enemy2Prefab, -155, 155, 680, this.enemy2Speed);
         this.enemyArray.push(enemyNode);
     }
 
@@ -154,7 +154,7 @@ export class EnemyManager extends Component {
         } else {
             prefab = this.reward2Prefab;
         }
-        this.objectSpawn(prefab, -207, 207, 474, 100);
+        this.objectSpawn(prefab, -207, 207, 600, 100);
     }
     
     objectSpawn(objPrefab:Prefab, minX: number, maxX: number, Y: number, speed: number):Node {
